@@ -10,4 +10,9 @@ model=LinearRegression()
 model.fit(X_train,y_train)
 st.title("exam score predictor")
 st.write("enter hours studied to predict exam score")
-hours=st
+hours=st.number_input("Hours:",min_value=0.0,step=0.1)
+if st.button("predict score"):
+  predicted score = model.predict([[hourse]])[0]
+  st.success(f"predicted score:{predicted_score:.2f}")
+  st.write("###sample training data")
+  st.dataframe(df)
